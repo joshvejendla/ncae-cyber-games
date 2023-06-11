@@ -1,0 +1,139 @@
+---
+# C2Games CTF Challenge
+# Title: This is the challenge name that will be displayed on the scoreboard.
+#   The title can provide a hint as to what the challenge might involve, or
+#   can just be a way to lure the students in. Be creative!
+#   Ex: Come and Git It!
+
+Title: 'FTP Hax'
+
+# Author: This identifies the student or students who designed the challenge.
+#  Ex. John Smith & Sally Student
+
+Author: 'Brodie Davis (@rudedog9d)'
+
+# Organization: This identifies the school or organization
+#   with which the author or authors are associated.
+
+Organization: 'NCAE Cyber Games'
+
+# Description: This is the challenge text that will be displayed to the
+#  student when they access the challenge. It should provide information
+#  about the challenge including any relevant details about how to access
+#  the challenge if it is Service-Based. Feel free to get creative with
+#  the description! The description can span multiple lines but should
+#  not exceed 1024 characters.
+
+Description: >
+  What year was the "smiley face vulnerability" discovered in VSFTP? Submit as `c2ctf{XXXX}`
+
+# Category: This defines where the challenge will be located on the
+#  scoreboard. The available options are :
+#  - Trivia
+#    - Trivia challenges are based on real-life events, popular culture
+#    references, or specific information about how security is handled in
+#    various security implementations such as protocol handshakes, key
+#    generation, how tools are used, etc).
+#
+#  - Cryptography
+#    - Cryptography challenges usually revolve around classical ciphers
+#    or custom algorithms that have weaknesses in the way they protect
+#    information. Typically, these challenges require the participant to
+#    identify these weaknesses and obtain a flag from the encrypted text or
+#    interactive service.
+#
+#  - Exploitation
+#    - Exploitation challenges include publicly disclosed applications,
+#    custom applications or services, or web applications that need to be
+#    researched or evaluated and then attacked. These might include a web
+#    application that has a vulnerability that must be identified and
+#    exploited, such as SQL Injection. After successfully exploiting the
+#    vulnerability, a flag is obtained.
+#
+#  - Reverse Engineering
+#    - Reverse Engineering includes binaries or source code that needs to be
+#    reviewed or decompiled to identify how to solve the problem presented.
+#    These may include applications that need to be decompiled and reviewed,
+#    or programs and source code that need to be reviewed to identify flawed
+#    logic in order to be solved.
+#
+#  - Forensics
+#    - Forensics challenges task the participant with a set of data and
+#    questions to answer. The challenge data may include OS file system
+#    artifacts, memory,network traffic, event logs, 3rd party evidence etc.
+#    that must be examined, parsed, and/or contextualized in order to answer
+#    questions about specific scenarios. These challenges may include a mix
+#    of captured raw artifacts, pre-parsed reports, as well as live systems
+#    for the participant to interact with.
+#
+#  - Ops
+#    - Ops challenges task the students with an interactive environment where
+#    they are required to complete a specific task. These challenges may
+#    include tasks such as system or service configuration, the installation
+#    or updating of packages, or other system administration tasks. The goal
+#    of these tasks is to provide the students with a faulty or misconfigured
+#    scenario for them to identify and rectify.
+#
+#  - Misc/General Skills
+#    - These challenges might cover any miscellaneous challenges that
+#    don't fit into one of the other categories. These might include things
+#    such as steganography, puzzles or challenges that require programming or
+#    automation	in order to solve
+
+# Uncomment one of the Categories below.
+Category: 'Trivia'
+
+# Type: This identifies the challenge as either Static or Service-Based.
+#   Types are defined in the challenge submission specification document,
+#   but briefly:
+#   - Static challenges do not require students to interact
+#   with a remote system or service but may include executables that
+#   students must evaluate.
+#
+#   - Service-Based challenge are interactive where students must
+#   connect with a remote system or application.
+
+# Uncomment one of the Type lines below.
+Type: 'Static'
+
+# Difficulty: This is an estimate as to how difficult the challenge
+#   is on a scale of 1 to 10 (1 being easiest and 10 being most difficult).
+#   Challenges that are more difficult to complete are worth more points.
+
+Difficulty: 1
+
+# Flag: This is the flag that should be submitted to indicate that the
+#   challenge has been solved. This can be defined explicitly
+#   (e.g. 'Expl1ciT_Fl4g') or defined via regex when the
+#   case can be ignored. In This situation, the flag format should be
+#   r'<regex_to_match>'. Flags can include special characters and/or
+#   spaces, if needed. Flags can include the C2Games format
+#   which is as follows (excluding brackets):
+#   c2ctf{<flag>}
+#   This can be omitted when it can't fit in with the challenge, but
+#   it is recommended to allow students to identify when they have found
+#   an actual flag. If this format cannot be followed, include information
+#   in the challenge description to clarify how the flag should be submitted.
+
+# Uncomment one of the examples below and replace the text between the
+#  brackets (<>) with the challenge flag.
+Flag: 'c2ctf{2011}'
+
+# Setup: This is a reference to the document containing a walkthrough
+#   for configuring or deploying the challenge, or any specific documentation
+#   or supplemental information relating to the challenge setup. Files listed
+#   here must be included in the supplemental_files directory.
+
+Setup:
+
+# Solution: This is a reference to the document containing a walkthrough
+#   for solving the challenge, or any specific documentation or supplemental
+#   information relating to the challenge solution. Files listed here
+#   must be included in the supplemental_files directory.
+
+Solution:
+
+Justification:
+  This challenge identifies a specific disclosed vulnerability related to the VSFTP 
+  software. By using some simple searching, participants should be able to identify
+  the exploit and determine the year it occurred
