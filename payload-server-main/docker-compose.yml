@@ -1,0 +1,13 @@
+version: '3.1'
+
+services:
+  payload-server:
+    image: payload-server
+    build: .
+    ports:
+    - 5000:5000
+    volumes:
+      - './templates:/app/templates'
+      - './elf:/app/elf'
+      - './shellcode:/app/shellcode'
+      - './python:/app/python'

@@ -1,0 +1,67 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2022-03-30T01:03:13Z"
+  labels:
+    app: payload_serverpod
+  name: payload_server_pod
+spec:
+  ports:
+  - name: "5000"
+    nodePort: 32479
+    port: 5000
+    targetPort: 5000
+  selector:
+    app: payload_server_pod
+  type: NodePort
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: "2022-03-30T01:03:13Z"
+  labels:
+    app: payload_serverpod
+  name: payload_server_pod
+spec:
+  containers:
+  - image: localhost/payload-server:latest
+    name: payload-server
+    ports:
+    - containerPort: 5000
+      hostPort: 5000
+      protocol: TCP
+    stdin: true
+    tty: true
+    volumeMounts:
+    - mountPath: /app/templates
+      name: templates
+      readOnly: true
+    - mountPath: /app/elf
+      name: elf
+      readOnly: true
+    - mountPath: /app/shellcode
+      name: shellcode
+      readOnly: true
+    - mountPath: /app/python
+      name: python
+      readOnly: true
+    workingDir: /app
+  volumes:
+  - hostPath:
+      path: /path/to/the/templates
+      type: Directory
+    name: templates
+  - hostPath:
+      path: /path/to/the/elf-files
+      type: Directory
+    name: elf
+  - hostPath:
+      path: /path/to/the/shellcode-files
+      type: Directory
+    name: shellcode
+  - hostPath:
+      path: /path/to/the/python-files
+      type: Directory
+    name: python
